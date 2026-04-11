@@ -1,0 +1,1 @@
+# Samsung-SolarCell-Remote-HA-Card
