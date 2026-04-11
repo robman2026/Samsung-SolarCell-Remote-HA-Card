@@ -2,7 +2,7 @@
 
 A pixel-perfect **Samsung SolarCell remote control** custom card for [Home Assistant](https://www.home-assistant.io/).
 
-![Samsung Solar Remote Card](https://raw.githubusercontent.com/YOUR_USERNAME/samsung-solar-remote/main/preview.png)
+![Samsung Solar Remote Card](https://raw.githubusercontent.com/robman2026/Samsung-SolarCell-Remote-HA-Card/main/preview.png)
 
 ## Features
 
@@ -21,13 +21,13 @@ A pixel-perfect **Samsung SolarCell remote control** custom card for [Home Assis
 1. Open HACS in your Home Assistant instance
 2. Go to **Frontend**
 3. Click the three-dot menu → **Custom repositories**
-4. Add `https://github.com/YOUR_USERNAME/samsung-solar-remote` as category **Lovelace**
+4. Add `https://github.com/robman2026/Samsung-SolarCell-Remote-HA-Card` as category **Lovelace**
 5. Click **Install**
 6. Reload your browser
 
 ### Manual
 
-1. Download `samsung-solar-remote.js` from the [latest release](https://github.com/YOUR_USERNAME/samsung-solar-remote/releases)
+1. Download `samsung-solar-remote.js` from the [latest release](https://github.com/robman2026/Samsung-SolarCell-Remote-HA-Card/releases)
 2. Copy it to `/config/www/samsung-solar-remote.js`
 3. Add to your `configuration.yaml` (or via UI → Settings → Dashboards → Resources):
    ```yaml
