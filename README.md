@@ -127,4 +127,4 @@ The card uses standard Samsung remote key codes:
 
 ## License
 
-MIT © YOUR_USERNAME
+MIT © RobMan
