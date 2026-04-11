@@ -1,0 +1,18 @@
+# Example Lovelace configuration for Samsung Solar Remote Card
+#
+# Minimal config:
+#   type: custom:samsung-solar-remote-card
+#   media_player: media_player.samsung_tv
+#   remote: remote.samsung_tv
+#
+# Full config (shown below):
+
+type: custom:samsung-solar-remote-card
+media_player: media_player.Odin
+remote: remote.Odin
+spotify: true
+apps:
+  netflix: true
+  youtube: true
+  prime: true
+  disney: true
