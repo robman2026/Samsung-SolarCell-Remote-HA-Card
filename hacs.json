@@ -1,6 +1,8 @@
 {
   "name": "SamsungTV SolarCell Remote Card",
   "description": "A beautiful Home Assistant Lovelace card for Samsung TV SolarCell Remote.",
+  "content_type": "plugin",
+  "render_as_panel": false,
   "render_readme": true,
   "filename": "samsungtv-solarcell-remote-card.js"
   "homeassistant": "2023.1.0",
