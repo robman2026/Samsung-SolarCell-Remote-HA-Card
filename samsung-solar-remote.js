@@ -497,19 +497,25 @@ const STYLES = `
   }
 
 /* ── Samsung wordmark at bottom ── */
-  .samsung-logo {
-    margin-top: 14px;
-    margin-bottom: 4px;
-    opacity: 0.35;
-    user-select: none;
-    pointer-events: none;
-    flex-shrink: 0;
-  }
-  .samsung-logo svg {
-    width: 90px;
-    height: auto;
-    display: block;
-  }
+   .samsung-logo {
+     margin-top: 14px;
+     margin-bottom: 4px;
+     opacity: 0.35;
+     user-select: none;
+     pointer-events: none;
+     flex-shrink: 0;
+   
+     width: 100%;
+     height: 24px;
+   
+     background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: contain;
+   
+     filter: brightness(0) invert(1); /* makes it white */
+   }
+
 `;
 
 /* ─────────────────────────────────────────────────────────────
@@ -690,9 +696,7 @@ class SamsungSolarRemoteCard extends HTMLElement {
         </div>` : ''}
         
       <!-- Samsung wordmark -->
-        <div class="samsung-logo" style: width:100%; height:100%; background: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg") center/contain no-repeat; filter: brightness(0) invert(1)>
-          ""
-        </div>   
+        <div class="samsung-logo"></div>   
       </div>
     `;
 
