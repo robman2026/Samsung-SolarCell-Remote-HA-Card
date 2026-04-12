@@ -43,24 +43,82 @@ const STYLES = `
   }
 
   /* ── Base round button ── */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(30,30,30,0.9);
-    border: 2px solid #3a1515;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: filter .1s, transform .08s;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    flex-shrink: 0;
-  }
-  .btn:active { filter: brightness(2); transform: scale(0.88); }
-  .btn-50 { width:50px; height:50px; }
-  .btn-44 { width:44px; height:44px; }
-  .btn svg { width:22px; height:22px; fill:white; display:block; }
-  .btn.icon-lg svg { width:26px; height:26px; }
+.btn {
+  position: relative;                 /* REQUIRED for pseudo-elements */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(30,30,30,0.9);
+  border: 0;                           /* we replace the border */
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: filter .1s, transform .08s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  flex-shrink: 0;
+}
+
+/* --- BASE INNER BORDER --- */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.18),
+    inset 0 0 10px rgba(255,255,255,0.12);
+
+  opacity: 0.6;
+  transition: opacity 160ms ease;
+}
+
+/* --- HOVER / ACTIVE BORDER (STRONGER) --- */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.4),
+    inset 0 0 18px rgba(255,255,255,0.32);
+
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+/* hover */
+.btn:hover::after {
+  opacity: 1;
+}
+
+/* active (keeps your behavior) */
+.btn:active {
+  filter: brightness(2);
+  transform: scale(0.88);
+}
+
+/* sizes */
+.btn-50 { width:50px; height:50px; }
+.btn-44 { width:44px; height:44px; }
+
+/* icon */
+.btn svg {
+  width:22px;
+  height:22px;
+  fill:white;
+  display:block;
+}
+.btn.icon-lg svg {
+  width:26px;
+  height:26px;
+}
+
 
   /* ── Power — slim oval ── */
   .btn-power {
