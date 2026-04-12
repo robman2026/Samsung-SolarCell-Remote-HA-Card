@@ -191,6 +191,24 @@ const STYLES = `
   fill: white;
 }
 
+   /* ── Plex — slim oval amber ── */
+   .btn-plex {
+     width: 50px;
+     height: 30px;
+     border-radius: 20px;
+     background: #EBAF00; /* Plex yellow */
+     border: none;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: filter .1s, transform .08s;
+     -webkit-tap-highlight-color: transparent;
+     touch-action: manipulation;
+   }
+   
+   .btn-plex:active { filter: brightness(1.3);transform: scale(0.88); }
+   .btn-plex svg { width: 20px; height: 20px; fill: white; display: block; }
 
   /* ── Spotify — slim oval green ── */
   .btn-spotify {
@@ -519,6 +537,7 @@ const STYLES = `
 ───────────────────────────────────────────────────────────── */
 const ICONS = {
   power:     `<svg viewBox="0 0 24 24" fill="none"><path d="M12 3v9" stroke="#cc2222" stroke-width="2.2" stroke-linecap="round"/><path d="M7 6.3A8 8 0 1 0 17 6.3" stroke="#cc2222" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>`,
+  plex:      `<svg viewBox="0 0 24 24" fill="white" aria-label="Plex"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 5l6 5-6 5V7z"/></svg>`,
   spotify:   `<svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 0 1 .207.857zm1.224-2.723a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.781.781 0 0 1 .519-.972c3.632-1.102 8.147-.568 11.234 1.328a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.794c3.531-1.071 9.404-.864 13.115 1.338a.937.937 0 0 1-.954 1.612z"/></svg>`,
   menu:      `<svg viewBox="0 0 24 24" fill="white"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`,
   mute:      `<svg viewBox="0 0 24 24" fill="white"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>`,
@@ -554,6 +573,7 @@ class SamsungSolarRemoteCard extends HTMLElement {
     this._config = {
       media_player: config.media_player || '',
       remote:       config.remote       || '',
+      plex:         config.plex         !== false,
       spotify:      config.spotify      !== false,
       apps: {
         netflix: config.apps?.netflix !== false,
@@ -606,6 +626,7 @@ class SamsungSolarRemoteCard extends HTMLElement {
         if (mp) this._call('media_player', 'turn_off', { entity_id: mp });
         else this._sendKey('KEY_POWER');
         break;
+      case 'plex':     this._call('shell_command', 'launch_plex');    break;
       case 'spotify':  this._call('shell_command', 'launch_spotify'); break;
       case 'netflix':  this._call('shell_command', 'launch_netflix'); break;
       case 'youtube':  this._call('shell_command', 'launch_youtube'); break;
@@ -625,6 +646,8 @@ class SamsungSolarRemoteCard extends HTMLElement {
         <!-- Power + Spotify -->
         <div class="row">
           <button class="btn-power" data-action="power">${ICONS.power}</button>
+          <span></span>
+          ${cfg.plex ? `<button class="btn-plex" data-action="plex">${ICONS.plex}</button>` : ''}
           <span></span>
           ${cfg.spotify ? `<button class="btn-spotify" data-action="spotify">${ICONS.spotify}</button>` : ''}
         </div>
