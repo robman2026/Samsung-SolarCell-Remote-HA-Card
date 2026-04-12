@@ -504,10 +504,7 @@ const STYLES = `
      user-select: none;
      pointer-events: none;
      flex-shrink: 0;
-   
-     width: 100%;
-     height: 24px;
-   
+     width: 50%;   
      background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg");
      background-position: center;
      background-repeat: no-repeat;
@@ -633,6 +630,8 @@ class SamsungSolarRemoteCard extends HTMLElement {
           ${cfg.spotify ? `<button class="btn-spotify" data-action="spotify">${ICONS.spotify}</button>` : ''}
         </div>
 
+        <div class="divider"></div>
+ 
         <!-- 123 · Menu · Mute -->
         <div class="row">
           <button class="btn-123" data-action="more">
