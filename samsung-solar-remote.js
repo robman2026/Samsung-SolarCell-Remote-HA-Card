@@ -30,7 +30,7 @@ const STYLES = `
     padding: 28px 18px 20px;
     box-shadow: inset 0 4px 10px rgba(255,255,255,0.05);
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     font-family: -apple-system, 'Helvetica Neue', sans-serif;
   }
 
