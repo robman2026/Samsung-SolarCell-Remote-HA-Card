@@ -47,7 +47,7 @@ const STYLES = `
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(30, 30, 30, 0.9);
+    background: rgba(30,30,30,0.9);
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -56,7 +56,7 @@ const STYLES = `
     touch-action: manipulation;
     flex-shrink: 0;
   }
-  .btn:active { filter: brightness(1.6); transform: scale(0.88); }
+  .btn:active { filter: brightness(2); transform: scale(0.88); }
   .btn-50 { width:50px; height:50px; }
   .btn-44 { width:44px; height:44px; }
   .btn svg { width:22px; height:22px; fill:white; display:block; }
@@ -208,13 +208,26 @@ const STYLES = `
   }
   .btn-app:active { filter: brightness(1.3); transform: scale(0.95); }
 
-  .btn-netflix { background:#000; border:1px solid #111; }
-  .btn-netflix span { color:#e50914; font-weight:900; font-size:13px; letter-spacing:0.5px; white-space:nowrap; }
+  .btn-netflix {
+    background: #000;
+    border:1px solid #111;
+  }
+  .btn-netflix-logo {
+    width:75%; height:75%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg") center/contain no-repeat;
+    filter: brightness(0) invert(1);
+  }
 
-  .btn-youtube { background:#fff; border:1px solid #eee; }
-  .btn-youtube span { color:#000; font-weight:700; font-size:13px; white-space:nowrap; }
-  .btn-youtube svg { flex-shrink:0; }
-
+  .btn-youtube {
+    background:#fff; 
+    border:1px solid #eee;
+  }
+  .btn-youtube-logo {
+    width:75%; height:75%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg") center/contain no-repeat;
+    filter: brightness(0) invert(1);
+  }
+  
   .btn-prime {
     background: linear-gradient(200deg, #1098F7 0%, #001f3f 100%);
     border: 1px solid #1098F7;
@@ -259,7 +272,6 @@ const ICONS = {
   voldown:   `<svg viewBox="0 0 24 24" fill="white"><path d="M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z"/></svg>`,
   chup:      `<svg viewBox="0 0 24 24" fill="white"><path d="M7 14l5-5 5 5z"/></svg>`,
   chdown:    `<svg viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>`,
-  youtube:   `<svg viewBox="0 0 24 16" width="22" height="15"><rect width="24" height="16" rx="3.5" fill="#FF0000"/><polygon points="10,3.5 10,12.5 18,8" fill="white"/></svg>`,
   cog:       `<svg viewBox="0 0 24 24" fill="white"><path d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54A.484.484 0 0 0 14 3h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.476.476 0 0 0-.59.22L2.74 8.87a.47.47 0 0 0 .12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.57 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.47.47 0 0 0-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>`,
 };
 
@@ -408,8 +420,8 @@ class SamsungSolarRemoteCard extends HTMLElement {
         <!-- Apps -->
         ${(cfg.apps.netflix || cfg.apps.youtube) ? `
         <div class="app-row">
-          ${cfg.apps.netflix ? `<button class="btn-app btn-netflix" data-action="netflix"><span>NETFLIX</span></button>` : ''}
-          ${cfg.apps.youtube ? `<button class="btn-app btn-youtube" data-action="youtube">${ICONS.youtube}<span>YouTube</span></button>` : ''}
+          ${cfg.apps.netflix ? `<button class="btn-app btn-netflix" data-action="netflix"><div class="btn-netflix-logo"></div></button>` : ''}
+          ${cfg.apps.youtube ? `<button class="btn-app btn-youtube" data-action="youtube"><div class="btn-youtube-logo"></div></button>` : ''}
         </div>` : ''}
 
         ${(cfg.apps.prime || cfg.apps.disney) ? `
