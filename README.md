@@ -1,6 +1,6 @@
-# Samsung Solar Remote Card
+# Samsung TV SolarCell Remote Card
 
-A pixel-perfect **Samsung SolarCell remote control** custom card for [Home Assistant](https://www.home-assistant.io/).
+A pixel-perfect **Samsung TV SolarCell remote** custom card for [Home Assistant](https://www.home-assistant.io/).
 
 ![Samsung Solar Remote Card](https://raw.githubusercontent.com/robman2026/Samsung-SolarCell-Remote-HA-Card/main/preview.png)
 
