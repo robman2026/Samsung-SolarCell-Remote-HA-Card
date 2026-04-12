@@ -213,7 +213,7 @@ const STYLES = `
     border:1px solid #111;
   }
   .btn-netflix-logo {
-    width:85%; height:85%;
+    width:95%; height:95%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg") center/contain no-repeat;
   }
 
@@ -222,18 +222,21 @@ const STYLES = `
     border:1px solid #eee;
   }
   .btn-youtube-logo {
-    width:85%; height:85%;
+    width:100%; height:100%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg") center/contain no-repeat;
   }
-  
+
   .btn-prime {
     background: linear-gradient(200deg, #1098F7 0%, #001f3f 100%);
     border: 1px solid #1098F7;
     box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
   }
-  .btn-prime span { color:white; font-weight:300; font-size:13px; white-space:nowrap; }
+  .btn-prime-logo {
+    width:95%; height:95%;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Prime_Video_logo.svg") center/contain no-repeat;
+  }
 
-  .btn-disney {
+    .btn-disney {
     background: linear-gradient(180deg, #016f7d 0%, #001f3f 100%);
     border: 1px solid #004d61;
   }
@@ -424,7 +427,7 @@ class SamsungSolarRemoteCard extends HTMLElement {
 
         ${(cfg.apps.prime || cfg.apps.disney) ? `
         <div class="app-row">
-          ${cfg.apps.prime  ? `<button class="btn-app btn-prime"  data-action="prime"><span>Prime Video</span></button>` : ''}
+          ${cfg.apps.prime  ? `<button class="btn-app btn-prime"  data-action="prime"><div class="btn-prime-logo"></div></button>` : ''}
           ${cfg.apps.disney ? `<button class="btn-app btn-disney" data-action="disney"><div class="btn-disney-logo"></div></button>` : ''}
         </div>` : ''}
 
