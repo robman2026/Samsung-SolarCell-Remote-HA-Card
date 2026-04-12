@@ -299,53 +299,138 @@ const STYLES = `
 }
 
   /* ── D-pad ── */
-  .dpad {
-    position: relative;
-    width: 160px;
-    height: 160px;
-    flex-shrink: 0;
-    margin: 2px 0;
-  }
-  .dpad-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 35%, #2a2a2a, #161616);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.7), inset 0 2px 4px rgba(255,255,255,0.04);
-  }
-  .dpad-btn {
-    position: absolute;
-    background: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    transition: filter .1s;
-  }
-  .dpad-btn:active { filter: brightness(2.2); }
-  .dpad-btn svg { width:24px; height:24px; fill:white; pointer-events:none; display:block; }
-  .dpad-up    { top:4px;    left:50%; transform:translateX(-50%); width:70px; height:52px; }
-  .dpad-down  { bottom:4px; left:50%; transform:translateX(-50%); width:70px; height:52px; }
-  .dpad-left  { left:4px;   top:50%;  transform:translateY(-50%); width:52px; height:70px; }
-  .dpad-right { right:4px;  top:50%;  transform:translateY(-50%); width:52px; height:70px; }
-  .dpad-ok {
-    position: absolute;
-    top:50%; left:50%;
-    transform: translate(-50%,-50%);
-    width: 88px; height: 88px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 35%, #2e2e2e, #141414);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.9), inset 0 2px 4px rgba(0,0,0,0.7), inset 0 1px 1px rgba(255,255,255,0.04);
-    border: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    transition: filter .1s, transform .08s;
-  }
-  .dpad-ok:active { filter: brightness(1.5); transform: translate(-50%,-50%) scale(0.92); }
+.dpad-ok {
+  position: absolute;
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+
+  background: radial-gradient(circle at 40% 35%, #2e2e2e, #141414);
+  border: 0;
+
+  box-shadow:
+    0 3px 10px rgba(0,0,0,0.9),
+    inset 0 2px 4px rgba(0,0,0,0.7),
+    inset 0 1px 1px rgba(255,255,255,0.04);
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: filter .1s, transform .08s;
+}
+
+/* base inner border */
+.dpad-ok::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.16),
+    inset 0 0 14px rgba(255,255,255,0.12);
+
+  opacity: 0.6;
+  transition: opacity 160ms ease;
+}
+
+/* hover / active border */
+.dpad-ok::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.38),
+    inset 0 0 22px rgba(255,255,255,0.32);
+
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.dpad-ok:hover::after {
+  opacity: 1;
+}
+
+.dpad-ok:active {
+  filter: brightness(1.5);
+  transform: translate(-50%,-50%) scale(0.92);
+}
+
+.dpad-btn {
+  position: absolute;
+  background: transparent;
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: filter .1s;
+}
+
+/* subtle inner edge */
+.dpad-btn::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 999px;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.12),
+    inset 0 0 10px rgba(255,255,255,0.1);
+
+  opacity: 0.5;
+  transition: opacity 120ms ease;
+}
+
+/* stronger on hover */
+.dpad-btn::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 999px;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.32),
+    inset 0 0 18px rgba(255,255,255,0.28);
+
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.dpad-btn:hover::after {
+  opacity: 1;
+}
+
+.dpad-btn:active {
+  filter: brightness(2.2);
+}
+
+/* icon */
+.dpad-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  pointer-events: none;
+  display: block;
+}
+
+.dpad-up    { top:4px;    left:50%; transform:translateX(-50%); width:70px; height:52px; }
+.dpad-down  { bottom:4px; left:50%; transform:translateX(-50%); width:70px; height:52px; }
+.dpad-left  { left:4px;   top:50%;  transform:translateY(-50%); width:52px; height:70px; }
+.dpad-right { right:4px;  top:50%;  transform:translateY(-50%); width:52px; height:70px; }
+
 
   /* ── Pill buttons — 35px height, 12px radius, matches YAML ── */
 .pill-row {
