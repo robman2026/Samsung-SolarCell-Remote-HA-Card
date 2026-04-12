@@ -697,6 +697,8 @@ class SamsungSolarRemoteCard extends HTMLElement {
           ${cfg.apps.disney ? `<button class="btn-app btn-disney" data-action="disney"><div class="btn-disney-logo"></div></button>` : ''}
         </div>` : ''}
 
+      <div class="divider"></div>
+
         ${(cfg.apps.plex || cfg.apps.spotify) ? `
         <div class="app-row">
           ${cfg.apps.plex  ? `<button class="btn-app btn-plex"  data-action="plex"><div class="btn-plex-logo"></div></button>` : ''}
