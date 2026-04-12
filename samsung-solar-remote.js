@@ -378,18 +378,34 @@ const STYLES = `
 }
 
 /* subtle inner edge */
+.dpad-btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: filter .1s;
+}
+
+/* base inner border — NO shrink */
 .dpad-btn::before {
   content: "";
   position: absolute;
-  inset: 4px;
-  border-radius: 999px;
+  inset: 0;                      
+  border-radius: inherit;
   pointer-events: none;
 
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.12),
+    inset 0 0 0 -1px rgba(255,255,255,0.14),
     inset 0 0 10px rgba(255,255,255,0.1);
 
-  opacity: 0.5;
+  opacity: 0.6;
   transition: opacity 120ms ease;
 }
 
@@ -397,12 +413,12 @@ const STYLES = `
 .dpad-btn::after {
   content: "";
   position: absolute;
-  inset: 4px;
-  border-radius: 999px;
+  inset: 0;                      
+  border-radius: inherit;
   pointer-events: none;
 
   box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.32),
+    inset 0 0 0 -1px rgba(255,255,255,0.34),
     inset 0 0 18px rgba(255,255,255,0.28);
 
   opacity: 0;
@@ -416,7 +432,6 @@ const STYLES = `
 .dpad-btn:active {
   filter: brightness(2.2);
 }
-
 /* icon */
 .dpad-btn svg {
   width: 24px;
