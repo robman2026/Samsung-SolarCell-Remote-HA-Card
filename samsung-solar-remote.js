@@ -331,8 +331,8 @@ const STYLES = `
 @keyframes aDown  { 0%,100%{transform:translateY(-3px)} 50%{transform:translateY(3px)} }
 @keyframes aRight { 0%,100%{transform:translateX(-3px)} 50%{transform:translateX(3px)} }
 
-.dpad-up    { top:4px;    left:50%; transform:translateX(-50%); width:70px; height:52px; }
-.dpad-down  { bottom:4px; left:50%; transform:translateX(-50%); width:70px; height:52px; }
+.dpad-up    { top:4px;    left:50%; transform:translateX(-50%); width:52px; height:52px; }
+.dpad-down  { bottom:4px; left:50%; transform:translateX(-50%); width:52px; height:52px; }
 .dpad-left  { left:4px;   top:50%;  transform:translateY(-50%); width:52px; height:70px; }
 .dpad-right { right:4px;  top:50%;  transform:translateY(-50%); width:52px; height:70px; }
 
