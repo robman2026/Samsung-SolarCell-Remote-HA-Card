@@ -505,7 +505,7 @@ const STYLES = `
     pointer-events: none;
     flex-shrink: 0;
     width: 100%;   
-    height: 20px;
+    height: 14px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg");
     background-position: center;
     background-repeat: no-repeat;
