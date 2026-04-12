@@ -12,6 +12,10 @@ A pixel-perfect **Samsung SolarCell remote control** custom card for [Home Assis
 - 🟢 Spotify, Netflix, YouTube, Prime Video, Disney+ buttons
 
 ---
+## 📸 Preview
+
+<img width="225" alt="image" src="https://github.com/user-attachments/assets/0a347ffa-36dc-4978-a45b-4adb179db6cd" />
+
 
 ## Installation
 
