@@ -1,3 +1,3 @@
-# Samsung Remote Card \n This is a custom remote for Samsung TVs.
+# Samsung TV SolarCell Remote Card
 
 A pixel-perfect Samsung SolarCell remote control custom card for Home Assistant.
