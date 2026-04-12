@@ -48,7 +48,7 @@ const STYLES = `
     align-items: center;
     justify-content: center;
     background: rgba(30,30,30,0.9);
-    border: none;
+    border: 2px solid #141414;
     border-radius: 50%;
     cursor: pointer;
     transition: filter .1s, transform .08s;
