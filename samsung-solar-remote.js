@@ -30,7 +30,7 @@ const STYLES = `
     padding: 24px 18px 32px;
     box-shadow: inset 0 4px 10px rgba(255,255,255,0.05);
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     font-family: -apple-system, 'Helvetica Neue', sans-serif;
   }
 
@@ -220,7 +220,7 @@ const STYLES = `
     border: 1px solid #1098F7;
     box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
   }
-  .btn-prime span { color:white; font-weight:700; font-size:13px; white-space:nowrap; }
+  .btn-prime span { color:white; font-weight:300; font-size:13px; white-space:nowrap; }
 
   .btn-disney {
     background: linear-gradient(180deg, #016f7d 0%, #001f3f 100%);
@@ -299,7 +299,7 @@ class SamsungSolarRemoteCard extends HTMLElement {
         enter:     config.commands?.enter     || 'KEY_ENTER',
         back:      config.commands?.back      || 'KEY_RETURN',
         home:      config.commands?.home      || 'KEY_HOME',
-        playpause: config.commands?.playpause || 'KEY_PLAYPAUSE',
+        playpause: config.commands?.playpause || 'KEY_ENTER',
         volup:     config.commands?.volup     || 'KEY_VOLUP',
         voldown:   config.commands?.voldown   || 'KEY_VOLDOWN',
         chup:      config.commands?.chup      || 'KEY_CHUP',
