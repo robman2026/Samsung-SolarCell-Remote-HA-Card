@@ -5,7 +5,7 @@
  * @license MIT
  */
 
-const CARD_VERSION = '1.1.0';
+const CARD_VERSION = '1.2.0';
 
 /* ─────────────────────────────────────────────────────────────
    STYLES
@@ -498,10 +498,12 @@ const STYLES = `
 
 /* ── Samsung wordmark at bottom ── */
   .samsung-logo {
-    width:100%; 
-    height:100%;
-    background: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg") center/contain no-repeat;
-    filter: brightness(0) invert(1);
+    margin-top: 14px;
+    margin-bottom: 4px;
+    opacity: 0.35;
+    user-select: none;
+    pointer-events: none;
+    flex-shrink: 0;
   }
   .samsung-logo svg {
     width: 90px;
@@ -687,11 +689,10 @@ class SamsungSolarRemoteCard extends HTMLElement {
           ${cfg.apps.disney ? `<button class="btn-app btn-disney" data-action="disney"><div class="btn-disney-logo"></div></button>` : ''}
         </div>` : ''}
         
-        <!-- Samsung wordmark -->        
-        ${(cfg.samsung) ? `
-        <div class="app-row">
-          ${cfg.samsung  ? `<div class="samsung-logo"></div>` : ''}
-        </div>` : ''}   
+      <!-- Samsung wordmark -->
+        <div class="samsung-logo" style: width:100%; height:100%; background: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg") center/contain no-repeat; filter: brightness(0) invert(1)>
+          ""
+        </div>   
       </div>
     `;
 
