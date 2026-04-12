@@ -14,8 +14,7 @@ A pixel-perfect **Samsung SolarCell remote control** custom card for [Home Assis
 ---
 ## 📸 Preview
 
-<img width="225" alt="image" src="https://github.com/user-attachments/assets/0a347ffa-36dc-4978-a45b-4adb179db6cd" />
-
+<img width="277" alt="image" src="https://github.com/user-attachments/assets/66bf2633-5e8e-42e5-9f0d-6192d606fec5" />
 
 ## Installation
 
