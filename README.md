@@ -6,9 +6,8 @@ A pixel-perfect **Samsung SolarCell remote control** custom card for [Home Assis
 
 ## Features
 
-- 🎨 Matches the real Samsung SolarCell remote layout
+- 🎨 Matches somehow the real Samsung SolarCell remote layout
 - 📱 Fully responsive — works on mobile and desktop
-- ⚡ Zero dependencies — single JS file
 - 🎛️ Configurable entity IDs, apps, and commands
 - 🟢 Spotify, Netflix, YouTube, Prime Video, Disney+ buttons
 
@@ -121,10 +120,11 @@ The card uses standard Samsung remote key codes:
 | Volume Down | `KEY_VOLDOWN` |
 | Channel Up | `KEY_CHUP` |
 | Channel Down | `KEY_CHDOWN` |
-| Play/Pause | `KEY_PLAYPAUSE` |
+| Play/Pause | `KEY_ENTER` |
 
 ---
 
 ## License
 
-MIT © RobMan
+MIT License — free to use, modify, and distribute.
+If you find this useful, please ⭐ star the repo!
