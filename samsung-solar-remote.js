@@ -497,22 +497,20 @@ const STYLES = `
   }
 
 /* ── Samsung wordmark at bottom ── */
-   .samsung-logo {
-     margin-top: 14px;
-     margin-bottom: 4px;
-     opacity: 0.35;
-     user-select: none;
-     pointer-events: none;
-     flex-shrink: 0;
-     width: 50%;   
-     background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg");
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: contain;
-   
-     filter: brightness(0) invert(1); /* makes it white */
-   }
-
+  .samsung-logo {
+    margin-top: 14px;
+    margin-bottom: 4px;
+    opacity: 0.35;
+    user-select: none;
+    pointer-events: none;
+    flex-shrink: 0;
+    width: 50%;   
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: brightness(0) invert(1); /* makes it white */
+  }
 `;
 
 /* ─────────────────────────────────────────────────────────────
