@@ -242,7 +242,7 @@ const STYLES = `
     border: 1px solid #004d61;
   }
   .btn-disney-logo {
-    width:95%; height:95%;
+    width:100%; height:100%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg") center/contain no-repeat;
     filter: brightness(0) invert(1);
   }
