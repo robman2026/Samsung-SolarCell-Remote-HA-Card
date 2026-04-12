@@ -121,21 +121,76 @@ const STYLES = `
 
 
   /* ── Power — slim oval ── */
-  .btn-power {
-    width: 50px; height: 30px;
-    border-radius: 20px;
-    background: rgba(30,30,30,0.9);
-    border: 2px solid #3a1515;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: filter .1s, transform .08s;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-  }
-  .btn-power:active { filter: brightness(1.6); transform: scale(0.88); }
-  .btn-power svg { width:18px; height:18px; display:block; }
+.btn-power {
+  position: relative;                 /* required */
+  width: 50px;
+  height: 30px;
+  border-radius: 20px;
+
+  background: rgba(30,30,30,0.9);
+  border: 0;                          /* we replace the border */
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: filter .1s, transform .08s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* --- BASE INNER BORDER --- */
+.btn-power::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.16),
+    inset 0 0 8px rgba(255,255,255,0.12);
+
+  opacity: 0.6;
+  transition: opacity 160ms ease;
+}
+
+/* --- HOVER / ACTIVE BORDER (STRONGER) --- */
+.btn-power::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.38),
+    inset 0 0 14px rgba(255,255,255,0.3);
+
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+/* hover */
+.btn-power:hover::after {
+  opacity: 1;
+}
+
+/* active (keeps your exact behavior) */
+.btn-power:active {
+  filter: brightness(1.6);
+  transform: scale(0.88);
+}
+
+/* icon */
+.btn-power svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: white;
+}
+
 
   /* ── Spotify — slim oval green ── */
   .btn-spotify {
@@ -155,28 +210,93 @@ const STYLES = `
   .btn-spotify svg { width:20px; height:20px; fill:white; display:block; }
 
   /* ── 123 button ── */
-  .btn-123 {
-    width: 50px; height: 50px;
-    border-radius: 50%;
-    background: rgba(30,30,30,0.9);
-    border: 2px solid #3a1515;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1px;
-    cursor: pointer;
-    transition: filter .1s, transform .08s;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    padding: 0;
-    flex-shrink: 0;
-  }
-  .btn-123:active { filter: brightness(1.6); transform: scale(0.88); }
-  .btn-123 .cog  { width:13px; height:13px; fill:white; }
-  .btn-123 .num  { font-size:8px; font-weight:700; color:white; line-height:1; }
-  .btn-123 .dots { display:flex; gap:2px; }
-  .btn-123 .dot  { width:4px; height:4px; border-radius:50%; }
+.btn-123 {
+  position: relative;                 /* required for pseudo-elements */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: rgba(30,30,30,0.9);
+  border: 0;                          /* replace solid border */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+
+  cursor: pointer;
+  transition: filter .1s, transform .08s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* --- BASE INNER BORDER --- */
+.btn-123::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.16),
+    inset 0 0 10px rgba(255,255,255,0.12);
+
+  opacity: 0.6;
+  transition: opacity 160ms ease;
+}
+
+/* --- HOVER / ACTIVE BORDER (STRONGER) --- */
+.btn-123::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.38),
+    inset 0 0 18px rgba(255,255,255,0.3);
+
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+/* hover */
+.btn-123:hover::after {
+  opacity: 1;
+}
+
+/* active (keeps your behavior exactly) */
+.btn-123:active {
+  filter: brightness(1.6);
+  transform: scale(0.88);
+}
+
+/* content (unchanged) */
+.btn-123 .cog  {
+  width: 13px;
+  height: 13px;
+  fill: white;
+}
+.btn-123 .num  {
+  font-size: 8px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+.btn-123 .dots {
+  display: flex;
+  gap: 2px;
+}
+.btn-123 .dot  {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
 
   /* ── D-pad ── */
   .dpad {
@@ -228,23 +348,81 @@ const STYLES = `
   .dpad-ok:active { filter: brightness(1.5); transform: translate(-50%,-50%) scale(0.92); }
 
   /* ── Pill buttons — 35px height, 12px radius, matches YAML ── */
-  .pill-row { display:flex; gap:6px; width:100%; }
-  .btn-pill {
-    flex: 1;
-    height: 35px;
-    border-radius: 12px;
-    background: rgba(30,30,30,0.9);
-    border: 2px solid #3a1515;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: filter .1s, transform .08s;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-  }
-  .btn-pill:active { filter: brightness(1.6); transform: scale(0.93); }
-  .btn-pill svg { width:18px; height:18px; fill:white; display:block; }
+.pill-row {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.btn-pill {
+  position: relative;                 /* required */
+  flex: 1;
+  height: 35px;
+  border-radius: 12px;
+
+  background: rgba(30,30,30,0.9);
+  border: 0;                          /* replace solid border */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: filter .1s, transform .08s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* --- BASE INNER BORDER --- */
+.btn-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.15),
+    inset 0 0 8px rgba(255,255,255,0.12);
+
+  opacity: 0.6;
+  transition: opacity 160ms ease;
+}
+
+/* --- HOVER / ACTIVE BORDER (STRONGER) --- */
+.btn-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.36),
+    inset 0 0 14px rgba(255,255,255,0.3);
+
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+/* hover */
+.btn-pill:hover::after {
+  opacity: 1;
+}
+
+/* active (keeps your behavior) */
+.btn-pill:active {
+  filter: brightness(1.6);
+  transform: scale(0.93);
+}
+
+/* icon */
+.btn-pill svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  display: block;
+}
 
   /* ── App buttons ── */
   .app-row { display:flex; gap:6px; width:100%; }
