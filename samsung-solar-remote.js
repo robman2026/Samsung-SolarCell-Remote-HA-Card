@@ -193,7 +193,7 @@ const STYLES = `
   .btn-app {
     flex: 1;
     height: 35px;
-    border-radius: 16px;
+    border-radius: 13px;
     border: none;
     cursor: pointer;
     display: flex;
@@ -204,7 +204,7 @@ const STYLES = `
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     gap: 4px;
-    padding: 0 8px;
+    padding: 0 6px;
   }
   .btn-app:active { filter: brightness(1.3); transform: scale(0.95); }
 
@@ -222,7 +222,7 @@ const STYLES = `
     border:1px solid #eee;
   }
   .btn-youtube-logo {
-    width:100%; height:100%;
+    width:120%; height:120%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg") center/contain no-repeat;
   }
 
@@ -232,8 +232,9 @@ const STYLES = `
     box-shadow: inset 0 1px 2px rgba(255,255,255,0.2);
   }
   .btn-prime-logo {
-    width:95%; height:95%;
+    width:100%; height:100%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Prime_Video_logo.svg") center/contain no-repeat;
+    filter: brightness(0) invert(1);
   }
 
     .btn-disney {
@@ -241,7 +242,7 @@ const STYLES = `
     border: 1px solid #004d61;
   }
   .btn-disney-logo {
-    width:75%; height:75%;
+    width:95%; height:95%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg") center/contain no-repeat;
     filter: brightness(0) invert(1);
   }
@@ -250,7 +251,7 @@ const STYLES = `
     width: 85%;
     height: 1px;
     background: rgba(255,255,255,0.05);
-    margin: 1px 0;
+    margin: 4px 0;
   }
 `;
 
