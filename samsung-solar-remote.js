@@ -47,7 +47,7 @@ const STYLES = `
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(30,30,30,0.9);
+    background: rgba(80,80,80,0.3);
     border: none;
     border-radius: 50%;
     cursor: pointer;
