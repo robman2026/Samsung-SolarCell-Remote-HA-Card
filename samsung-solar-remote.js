@@ -299,53 +299,59 @@ const STYLES = `
 }
 
   /* ── D-pad ── */
- .dpad {
-    position: relative;
-    width: 160px;
-    height: 160px;
-    flex-shrink: 0;
-    margin: 2px 0;
-  }
-  .dpad-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 35%, #2a2a2a, #161616);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.7), inset 0 2px 4px rgba(255,255,255,0.04);
-  }
-  .dpad-btn {
-    position: absolute;
-    background: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    transition: filter .1s;
-  }
-  .dpad-btn:active { filter: brightness(2.2); }
-  .dpad-btn svg { width:24px; height:24px; fill:white; pointer-events:none; display:block; }
-  .dpad-up    { top:4px;    left:50%; transform:translateX(-50%); width:70px; height:52px; }
-  .dpad-down  { bottom:4px; left:50%; transform:translateX(-50%); width:70px; height:52px; }
-  .dpad-left  { left:4px;   top:50%;  transform:translateY(-50%); width:52px; height:70px; }
-  .dpad-right { right:4px;  top:50%;  transform:translateY(-50%); width:52px; height:70px; }
-  .dpad-ok {
-    position: absolute;
-    top:50%; left:50%;
-    transform: translate(-50%,-50%);
-    width: 88px; height: 88px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 40% 35%, #2e2e2e, #141414);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.9), inset 0 2px 4px rgba(0,0,0,0.7), inset 0 1px 1px rgba(255,255,255,0.04);
-    border: none;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    transition: filter .1s, transform .08s;
-  }
-  .dpad-ok:active { filter: brightness(1.5); transform: translate(-50%,-50%) scale(0.92); }
+.dpad { position:relative; width:160px; height:160px; flex-shrink:0; margin:2px 0; }
+.dpad-ring {
+  position:absolute; inset:0; border-radius:50%;
+  background: radial-gradient(circle at 40% 35%, #2a2a2a, #161616);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.7), inset 0 2px 4px rgba(255,255,255,0.04);
+}
+.dpad-btn {
+  position:absolute; background:transparent; border:none;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  transition: filter .1s; overflow: visible;
+}
+.dpad-btn:active { filter: brightness(2.2); }
+.dpad-btn svg.icon { width:24px; height:24px; fill:white; pointer-events:none; display:block; position:relative; z-index:1; transition: filter .15s; }
+.dpad-btn:hover svg.icon { filter: drop-shadow(0 0 5px rgba(255,255,255,0.9)) drop-shadow(0 0 10px rgba(180,180,255,0.6)); }
+
+/* glow arrow on d-pad */
+.dpad-btn .arrow-glow {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  opacity:0; transition:opacity .2s; pointer-events:none; z-index:2;
+}
+.dpad-btn:hover .arrow-glow { opacity:1; }
+.dpad-btn .arrow-glow svg { width:30px; height:30px; fill:white; filter: drop-shadow(0 0 8px rgba(255,255,255,1)) drop-shadow(0 0 16px rgba(160,160,255,0.7)); pointer-events:none; }
+.dpad-btn.btn-up    .arrow-glow svg { animation: aUp    .7s ease-in-out infinite; }
+.dpad-btn.btn-down  .arrow-glow svg { animation: aDown  .7s ease-in-out infinite; }
+.dpad-btn.btn-left  .arrow-glow svg { animation: aLeft  .7s ease-in-out infinite; }
+.dpad-btn.btn-right .arrow-glow svg { animation: aRight .7s ease-in-out infinite; }
+
+@keyframes aUp    { 0%,100%{transform:translateY(3px)}  50%{transform:translateY(-3px)} }
+@keyframes aDown  { 0%,100%{transform:translateY(-3px)} 50%{transform:translateY(3px)} }
+@keyframes aRight { 0%,100%{transform:translateX(-3px)} 50%{transform:translateX(3px)} }
+
+.dpad-up    { top:4px;    left:50%; transform:translateX(-50%); width:70px; height:52px; }
+.dpad-down  { bottom:4px; left:50%; transform:translateX(-50%); width:70px; height:52px; }
+.dpad-left  { left:4px;   top:50%;  transform:translateY(-50%); width:52px; height:70px; }
+.dpad-right { right:4px;  top:50%;  transform:translateY(-50%); width:52px; height:70px; }
+
+.dpad-ok {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:88px; height:88px; border-radius:50%;
+  background: radial-gradient(circle at 40% 35%, #2e2e2e, #141414);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.9), inset 0 2px 4px rgba(0,0,0,0.7), inset 0 1px 1px rgba(255,255,255,0.04);
+  border:none; cursor:pointer; overflow:hidden;
+  -webkit-tap-highlight-color:transparent; touch-action:manipulation;
+  transition: filter .1s, transform .08s;
+}
+.dpad-ok::after {
+  content:''; position:absolute; inset:0; border-radius:50%;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.12) 0%, transparent 70%);
+  opacity:0; transition: opacity .2s;
+}
+.dpad-ok:hover::after { opacity:1; }
+.dpad-ok:active { filter: brightness(1.5); transform: translate(-50%,-50%) scale(0.92); }
 
   /* ── Pill buttons — 35px height, 12px radius, matches YAML ── */
 .pill-row {
