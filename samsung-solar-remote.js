@@ -215,6 +215,7 @@ const STYLES = `
   .btn-netflix-logo {
     width:75%; height:75%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg") center/contain no-repeat;
+    filter: brightness(0) invert(0);
   }
 
   .btn-youtube {
@@ -224,6 +225,7 @@ const STYLES = `
   .btn-youtube-logo {
     width:75%; height:75%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg") center/contain no-repeat;
+    filter: brightness(0) invert(0);
   }
   
   .btn-prime {
