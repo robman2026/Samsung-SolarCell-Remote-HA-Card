@@ -213,9 +213,8 @@ const STYLES = `
     border:1px solid #111;
   }
   .btn-netflix-logo {
-    width:75%; height:75%;
+    width:85%; height:85%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg") center/contain no-repeat;
-    filter: brightness(0) invert(0);
   }
 
   .btn-youtube {
@@ -223,9 +222,8 @@ const STYLES = `
     border:1px solid #eee;
   }
   .btn-youtube-logo {
-    width:75%; height:75%;
+    width:85%; height:85%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg") center/contain no-repeat;
-    filter: brightness(0) invert(0);
   }
   
   .btn-prime {
