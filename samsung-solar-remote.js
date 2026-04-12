@@ -48,7 +48,7 @@ const STYLES = `
     align-items: center;
     justify-content: center;
     background: rgba(30,30,30,0.9);
-    border: 1.5px solid #3a1515;
+    border: 2px solid #3a1515;
     border-radius: 50%;
     cursor: pointer;
     transition: filter .1s, transform .08s;
@@ -67,7 +67,7 @@ const STYLES = `
     width: 50px; height: 30px;
     border-radius: 20px;
     background: rgba(30,30,30,0.9);
-    border: 1.5px solid #3a1515;
+    border: 2px solid #3a1515;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,7 @@ const STYLES = `
     width: 50px; height: 50px;
     border-radius: 50%;
     background: rgba(30,30,30,0.9);
-    border: 1.5px solid #3a1515;
+    border: 2px solid #3a1515;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -176,7 +176,7 @@ const STYLES = `
     height: 35px;
     border-radius: 12px;
     background: rgba(30,30,30,0.9);
-    border: 1.5px solid #3a1515;
+    border: 2px solid #3a1515;
     display: flex;
     align-items: center;
     justify-content: center;
