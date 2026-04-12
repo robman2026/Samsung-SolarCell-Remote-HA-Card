@@ -30,7 +30,7 @@ const STYLES = `
     padding: 28px 18px 20px;
     box-shadow: inset 0 4px 10px rgba(255,255,255,0.05);
     width: 100%;
-    max-width: 200px;
+    max-width: 300px;
     font-family: -apple-system, 'Helvetica Neue', sans-serif;
   }
 
@@ -504,7 +504,8 @@ const STYLES = `
     user-select: none;
     pointer-events: none;
     flex-shrink: 0;
-    width: 50%;   
+    width: 100%;   
+    height: 14px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b4/Samsung_wordmark.svg");
     background-position: center;
     background-repeat: no-repeat;
