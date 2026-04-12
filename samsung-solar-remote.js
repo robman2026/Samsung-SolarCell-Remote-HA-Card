@@ -23,11 +23,11 @@ const STYLES = `
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     background: #1c1c1c;
     border: 2px solid #141414;
     border-radius: 40px;
-    padding: 24px 18px 32px;
+    padding: 28px 18px 20px;
     box-shadow: inset 0 4px 10px rgba(255,255,255,0.05);
     width: 100%;
     max-width: 200px;
@@ -495,6 +495,21 @@ const STYLES = `
     background: rgba(255,255,255,0.05);
     margin: 4px 0;
   }
+
+/* ── Samsung wordmark at bottom ── */
+  .samsung-logo {
+    margin-top: 14px;
+    margin-bottom: 4px;
+    opacity: 0.35;
+    user-select: none;
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+  .samsung-logo svg {
+    width: 90px;
+    height: auto;
+    display: block;
+  }
 `;
 
 /* ─────────────────────────────────────────────────────────────
@@ -673,7 +688,14 @@ class SamsungSolarRemoteCard extends HTMLElement {
           ${cfg.apps.prime  ? `<button class="btn-app btn-prime"  data-action="prime"><div class="btn-prime-logo"></div></button>` : ''}
           ${cfg.apps.disney ? `<button class="btn-app btn-disney" data-action="disney"><div class="btn-disney-logo"></div></button>` : ''}
         </div>` : ''}
-
+        
+        <!-- Samsung wordmark -->
+        <div class="samsung-logo">
+          <svg viewBox="0 0 230 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill="white" d="M10.6 25.8c0 2.6 1.9 3.9 4.4 3.9 2 0 3.8-.9 3.8-2.8 0-1.8-1.3-2.4-3.8-3.1-3.9-1-7.2-2.2-7.2-6.3 0-3.9 3.3-6.3 7.4-6.3 4.2 0 7.4 2.4 7.4 6.5h-4.4c0-2.1-1.3-3.2-3.2-3.2-1.7 0-3 .8-3 2.4 0 1.7 1.4 2.2 4.4 3.1 3.8 1.1 6.7 2.4 6.7 6.3 0 4.3-3.5 6.5-8.2 6.5-4.8 0-8.1-2.6-8.1-7h4.8zm28.8-14.2h4.6v20.9h-4.4v-13l-4.4 13h-3.5l-4.4-13v13h-4.4V11.6h4.6l5.9 16.3 5.9-16.3zm16 0l6.8 20.9h-4.7l-1.2-4.1h-6.9l-1.2 4.1h-4.7l6.8-20.9h5.1zm-1.3 13.3l-2.3-7.9-2.3 7.9h4.6zm24-13.3v20.9h-4.3l-8-13.5v13.5H61V11.6h4.3l8 13.4V11.6h4.5zm18.3 12.5c0 5.2-3.1 8.8-8.7 8.8-5.5 0-8.7-3.6-8.7-8.8v-12.5h4.5v12.2c0 3 1.3 5.1 4.2 5.1s4.2-2.1 4.2-5.1V11.6h4.5v12.5zm11.9-6c-2-.5-3.2-1.2-3.2-2.6 0-1.3 1-2 2.6-2 1.7 0 2.8.9 2.8 2.7h4.2c0-3.8-2.8-5.9-7-5.9-3.8 0-7 2-7 5.6 0 3.6 2.8 5 6.3 5.9 2.2.6 3.5 1.3 3.5 2.9 0 1.6-1.3 2.5-3.3 2.5-1.9 0-3.4-1-3.4-3.1h-4.3c0 4 3 6.3 7.6 6.3 4.4 0 7.7-2.1 7.7-6 0-3.8-2.7-5.4-6.5-6.3zm19.7 2.6h-7v4.9h8.1v3.5h-12.6V11.6h12.6v3.5h-8.1v4.4h7v3.2zm17.7-9.1v20.9h-4.3l-8-13.5v13.5h-4.4V11.6h4.3l8 13.4V11.6h4.4z"/>
+          </svg>
+        </div>
+        
       </div>
     `;
 
