@@ -426,12 +426,6 @@ const STYLES = `
   display: block;
 }
 
-.dpad-up    { top:4px;    left:50%; transform:translateX(-50%); width:70px; height:52px; }
-.dpad-down  { bottom:4px; left:50%; transform:translateX(-50%); width:70px; height:52px; }
-.dpad-left  { left:4px;   top:50%;  transform:translateY(-50%); width:52px; height:70px; }
-.dpad-right { right:4px;  top:50%;  transform:translateY(-50%); width:52px; height:70px; }
-
-
   /* ── Pill buttons — 35px height, 12px radius, matches YAML ── */
 .pill-row {
   display: flex;
