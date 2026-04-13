@@ -557,13 +557,13 @@ class SamsungSolarRemoteCard extends HTMLElement {
     this._config = {
       media_player: config.media_player || '',
       remote:       config.remote       || '',
-      plex:         config.plex         !== false,
-      spotify:      config.spotify      !== false,
       apps: {
         netflix: config.apps?.netflix !== false,
         youtube: config.apps?.youtube !== false,
         prime:   config.apps?.prime   !== false,
         disney:  config.apps?.disney  !== false,
+        plex:    config.apps?.plex    !== false,
+        spotify: config.apps?.spotify !== false,
       },
       commands: {
         more:      config.commands?.more      || 'KEY_MORE',
