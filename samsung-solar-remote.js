@@ -480,7 +480,9 @@ const STYLES = `
   }
   
   .btn-plex {
-    background: #3a3a3a;
+    background: linear-gradient(50deg, #AFAFAF 40%, #fff 100%);
+    border: 1px solid #fff;
+	 box-shadow: inset 0 3px 4px rgba(0,0,0,0.2);
   }
   .btn-plex-logo {
     width:85%; height:85%;
