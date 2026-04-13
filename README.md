@@ -58,12 +58,13 @@ remote: remote.samsung_tv
 type: custom:samsung-solar-remote-card
 media_player: media_player.Odin       # used for power toggle
 remote: remote.Odin                   # used for key commands
-spotify: true                         # show Spotify button (default: true)
 apps:
   netflix: true
   youtube: true
   prime: true
   disney: true
+  plex: true
+  spotify: true 
 ```
 
 ### Options
