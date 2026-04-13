@@ -91,6 +91,7 @@ shell_command:
   launch_youtube:  "your-command-here"
   launch_prime:    "your-command-here"
   launch_disney:   "your-command-here"
+  launch_plex:   "your-command-here"
   launch_spotify:  "your-command-here"
 ```
 
