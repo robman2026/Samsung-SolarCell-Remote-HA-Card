@@ -9,7 +9,7 @@ A pixel-perfect **Samsung TV SolarCell remote** custom card for [Home Assistant]
 - 🎨 Matches somehow the real Samsung SolarCell remote layout
 - 📱 Fully responsive — works on mobile and desktop
 - 🎛️ Configurable entity IDs, apps, and commands
-- 🟢 Spotify, Netflix, YouTube, Prime Video, Disney+ buttons
+- 🟢 Spotify, Netflix, YouTube, Prime Video, Disney+ and Plex buttons
 
 ---
 ## 📸 Preview
