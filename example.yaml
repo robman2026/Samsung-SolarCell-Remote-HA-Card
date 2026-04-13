@@ -10,9 +10,10 @@
 type: custom:samsung-solar-remote-card
 media_player: media_player.Odin
 remote: remote.Odin
-spotify: true
 apps:
   netflix: true
   youtube: true
   prime: true
   disney: true
+  plex: true
+  spotify: true
