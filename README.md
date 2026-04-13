@@ -14,7 +14,7 @@ A pixel-perfect **Samsung TV SolarCell remote** custom card for [Home Assistant]
 ---
 ## 📸 Preview
 
-<img width="277" alt="image" src="https://github.com/user-attachments/assets/66bf2633-5e8e-42e5-9f0d-6192d606fec5" />
+<img width="277" alt="image" src="https://github.com/user-attachments/assets/e99b790a-3f60-4077-b6af-206ee4a39cb9" />
 
 ## Installation
 
