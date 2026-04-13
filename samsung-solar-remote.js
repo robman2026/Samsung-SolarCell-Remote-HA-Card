@@ -668,9 +668,9 @@ class SamsungSolarRemoteCard extends HTMLElement {
 
         <!-- Back · Home · Play/Pause -->
         <div class="row">
-          <button class="btn btn-50" data-action="back">${ICONS.back}</button>
-          <button class="btn btn-44" data-action="home">${ICONS.home}</button>
-          <button class="btn btn-50" data-action="playpause">${ICONS.playpause}</button>
+          <button class="btn btn-44" data-action="back">${ICONS.back}</button>
+          <button class="btn btn-50" data-action="home">${ICONS.home}</button>
+          <button class="btn btn-44" data-action="playpause">${ICONS.playpause}</button>
         </div>
 
         <!-- Vol + Channel -->
