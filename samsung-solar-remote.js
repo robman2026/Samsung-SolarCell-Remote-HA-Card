@@ -480,20 +480,19 @@ const STYLES = `
   }
   
   .btn-plex {
-    background: linear-gradient(180deg, #016f7d 0%, #001f3f 100%);
-    border: 1px solid #004d61;
+    background: #3a3a3a;
   }
   .btn-plex-logo {
-    width:100%; height:100%;
+    width:85%; height:85%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Plex_logo_2022.svg") center/contain no-repeat;
   }
 
   .btn-spotify {
-    background: linear-gradient(180deg, #016f7d 0%, #001f3f 100%);
-    border: 1px solid #004d61;
+    background: #1DB954;
+    border: 1px solid #1DB954;
   }
   .btn-spotify-logo {
-    width:100%; height:100%;
+    width:85%; height:85%;
     background: url("https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg") center/contain no-repeat;
     filter: brightness(0) invert(1);
   }
@@ -696,8 +695,6 @@ class SamsungSolarRemoteCard extends HTMLElement {
           ${cfg.apps.prime  ? `<button class="btn-app btn-prime"  data-action="prime"><div class="btn-prime-logo"></div></button>` : ''}
           ${cfg.apps.disney ? `<button class="btn-app btn-disney" data-action="disney"><div class="btn-disney-logo"></div></button>` : ''}
         </div>` : ''}
-
-      <div class="divider"></div>
 
         ${(cfg.apps.plex || cfg.apps.spotify) ? `
         <div class="app-row">
